@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Топ‑30 аниме: подбор по настроению и темпу</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#15172b">
+<link rel="stylesheet" href="style.css">
+<script src="icons.js" defer></script>
+<script src="scenes.js" defer></script>
+<script src="scenes2.js" defer></script>
+<script src="scenes3.js" defer></script>
+<script src="desc.js" defer></script>
+<script src="hints.js" defer></script>
+<script src="covers.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <h1>Топ‑30 аниме</h1>
+  <p class="lead">Выберите настроение и темп, а не только жанр. Добавьте пару тайтлов в избранное, и список «Для вас» подстроится.</p>
+</header>
+
+<main>
+<section class="filters" aria-label="Фильтры">
+    <label class="search">Поиск по названию или описанию
+      <input id="f-q" type="search" placeholder="Например: тетрадь смерти, Frieren, Kimi no Na wa, микроволновка">
+    </label>
+    <div class="row">
+      <label>Жанр <select id="f-g"></select></label>
+      <label>Настроение <select id="f-m"></select></label>
+      <label>Темп <select id="f-p"></select></label>
+      <label>Рейтинг <select id="f-r"></select></label>
+      <label>Сортировка
+        <select id="f-sort">
+          <option value="top">По рейтингу</option>
+          <option value="you">Для вас</option>
+        </select>
+      </label>
+    </div>
+    <div class="row chips" role="group" aria-label="Перерождение">
+      <span class="chips-title">Перерождение</span>
+      <button class="chip on" data-rb="">Любое</button>
+      <button class="chip" data-rb="1">Перерождение</button>
+      <button class="chip" data-rb="2">Перенос в другой мир</button>
+      <button class="chip" data-rb="0">Без этого</button>
+    </div>
+    <button class="link" id="adv-toggle" aria-expanded="false" aria-controls="adv">Расширенный поиск</button>
+    <div class="row adv" id="adv" hidden>
+      <label>Год выхода <select id="f-y"></select></label>
+      <label>Студия <select id="f-s"></select></label>
+      <label>Длительность <select id="f-l"></select></label>
+    </div>
+    <div class="bar">
+      <span id="count"></span>
+      <button class="link" id="reset">Сбросить фильтры</button>
+    </div>
+  </section>
+
+  <section id="grid" class="grid" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden>Ничего не найдено. Попробуйте снять фильтр «Рейтинг» или «Темп».</p>
+
+<section class="scen" aria-labelledby="scen-h">
+    <h2 id="scen-h">Если любите это, попробуйте это</h2>
+    <div id="scen" class="scen-list"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="privacy.html">Политика конфиденциальности</a>
+</footer>
+
+<aside id="panel" class="panel" aria-hidden="true">
+  <button class="close" id="close" aria-label="Закрыть">×</button>
+  <h3 id="panel-title"></h3>
+  <div id="panel-list"></div>
+</aside>
+</body>
+</html>
